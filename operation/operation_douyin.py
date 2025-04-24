@@ -4,10 +4,13 @@ from helium import *
 
 
 class Operation:            
-    #
-    # 给用户发私信
-    #
+    '''
+    这里是所有的 Op 函数, 我们可以实现所有操作
+    '''
     def send_message(self, driver, message, nickname):
+        '''
+        搜索特定用户并给用户发私信, 我们进入"精选"之后可以把最上面的推荐搜索卡掉
+        '''
         try:
             # 我们首先点击"精选"按钮
             click("精选")
@@ -70,63 +73,4 @@ class Operation:
             
         except Exception as e:
             print(f"操作失败: {str(e)}")
-
-    #
-    # 视频点赞
-    #
-    @staticmethod
-    def video_click_like():
-        time.sleep(3)
-        like_label_items = find_all(S("//div[@data-e2e-state='video-player-no-digged']"))
-        if len(like_label_items) > 0:
-            press("z")
-            print("点赞成功")
-        else:
-            print("该视频已经点赞啦")
-
-    #
-    # 用户关注
-    #
-    @staticmethod
-    def user_click_follow():
-        time.sleep(3)
-        follow_exist = Text("关注").exists()
-        if not follow_exist:
-            follow_exist = Text("回关").exists()
-            if not follow_exist:
-                print("该用户已关注啦")
-            else:
-                click("回关")
-                print("回关成功")
-        else:
-            click("关注")
-            print("关注成功")
-
-    # #
-    # # 匹配消息
-    # #
-    # @staticmethod
-    # def _match_comment(video_desc, match_comment_item_map):
-    #     for key, value in match_comment_item_map.items():
-    #         if key in video_desc:
-    #             return value
-    #     return ""
-
-    # #
-    # # 匹配视频
-    # #
-    # @staticmethod
-    # def _match_video(video_desc, match_video_items):
-    #     for match_video_item in match_video_items:
-    #         if match_video_item in video_desc:
-    #             return True
-    #     return False
-
-    # #
-    # # 获取内容评论总条数
-    # #
-    # @staticmethod
-    # def _get_comment_total_count(video_comment_count_text):
-    #     return video_comment_count_text[video_comment_count_text.find("(") + 1:video_comment_count_text.find(")")]
-
 
