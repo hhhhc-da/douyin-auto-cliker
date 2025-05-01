@@ -3,6 +3,8 @@
 
 ![image](./static/douyin_spider_v1_0.gif)
 
+本项目面向有一定 Python 编程能力的用户, 请先学习 os 系统库、argparse 参数处理库、pandas 数据存储库、numpy 数值计算库的相关内容
+
 ### 安装说明
 使用前安装好库
 
@@ -14,7 +16,7 @@ pip install helium pandas numpy
 准备一个 Excel 表格, 表头有 "user_id", "nickname", "score", 项目自动按照 nickname 进行搜索
 
 ### 数据对接
-将 main.py 内的 Excel 文件替换, 我懒得加 argparser 所以没有改
+将 main.py 内的 Excel 文件替换, 我懒得加 argparse 所以没有改
 
 ```python
 # 将这一句的文件定位出来
