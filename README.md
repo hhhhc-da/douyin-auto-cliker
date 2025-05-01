@@ -26,11 +26,11 @@ dou_yin = Douyin(os.path.join('..', 'Capture', 'runs', 'bert-user-test.xlsx'))
 ```python
 class Douyin:
     '''
-    抖音功能类, 可以实现一些自动化功能
+    功能类, 可以实现一些自动化功能
     '''
     def __init__(self, xlsx_file_name=os.path.join('..', 'Capture', 'runs', 'bert-user-score.xlsx'), weights=0.3):
         '''
-        抖音初始化函数, 根据你们自己需要访问的内容更改
+        初始化函数, 根据你们自己需要访问的内容更改
         '''
         self.is_login = False
         self.operate = Operation()
