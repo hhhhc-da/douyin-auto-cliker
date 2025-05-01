@@ -42,3 +42,31 @@ class Douyin:
 ```
 
 上面的初始化函数决定了你需要输入的数据, 只有评分达到设定的阈值后才会发送, 并且项目其实只用到了 "nickname" 和 "score" 所以剩余那个加不加都行
+
+### 修改发送内容
+
+```python
+class Douyin:
+    '''
+    这里省略好多内容, 在这个类内修改
+    '''
+
+    def search_account(self, driver):
+        '''
+        抖音搜索账号, 自动化获取用户信息并发送指定内容
+        '''
+        for nickname in self.pd_file['nickname']:
+            print("正在搜索用户: %s" % nickname)
+
+#################################################################################
+
+            # 修改这一个参数就可以了, 直接放这里或者自行封装
+            message = "Hello"
+
+#################################################################################
+            self.operate.send_message(driver=driver, message=message, nickname=nickname)
+            print("已完成发送")
+            
+        driver.quit()
+        print("已完成所有操作")
+```
