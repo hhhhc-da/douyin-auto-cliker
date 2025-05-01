@@ -79,4 +79,4 @@ class Douyin:
 
 想要实现文本分类并导出用户分析，可以查阅另一个项目
 
-![BERT 文本分类项目](https://github.com/hhhhc-da/bilibili-spider)
+[BERT 文本分类项目](https://github.com/hhhhc-da/bilibili-spider)
